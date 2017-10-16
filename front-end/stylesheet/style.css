@@ -1,0 +1,150 @@
+*{
+  font-family: 'ThaiSansNueue';
+}
+.fullscreen{
+  min-height: 100vh;
+  width: 100%;
+}
+.popup{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  min-height: 100vh;
+  display: none;
+  transition: all .5s;
+}
+.popup .popup-box{
+  margin: auto;
+  background: rgba(250, 250, 250, 0.8);
+  width: 300px;
+  min-height: 400px;
+}
+#login-input{
+  display: none;
+}
+#regis-input{
+  display: none;
+}
+/*navbar*/
+/******************************************************************/
+.scroll-nav{
+  position: absolute;
+  z-index: 100;
+  color: #fefefe;
+  width: 100%;
+  padding-top: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  transition: all .3s ease;
+}
+.scroll-nav > .logo{
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: left;
+}
+.scroll-nav button{
+  margin-left: .5em;
+  font-size: 17pt;
+  line-height: 1.2em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-bottom: 5px;
+  background: rgba(0, 0, 0, 0);
+  border: 1.5px solid rgba(0, 0, 0, 0);
+  color: #fefefe;
+  font-weight: bolder;
+  transition: all .4s;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.scroll-nav .button-primary{
+  border: 1.5px solid #fefefe;
+}
+.scroll-nav .button-primary:hover{
+  border: 1.5px solid hsl(30, 90%, 60%);
+  background: hsl(30, 90%, 60%);
+}
+.scroll-nav .button-secondary:hover{
+  color: hsl(30, 90%, 60%);
+  border: 1.5px solid hsl(30, 90%, 60%);
+}
+/*hero section*/
+/******************************************************************/
+#hero{
+  background: rgba(30, 30, 30, 0.9);
+  color: #fefefe;
+  position: relative;
+}
+.hero-bg{
+  background-image: url('../images/background/josefa-ndiaz-312261.jpg');
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+#hero > .filter{
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  display: flex;
+}
+#hero h1{
+  font-size: 40pt;
+}
+#hero h2{
+  font-size: 30pt;
+}
+.flex-center{
+  margin: auto;
+  text-align: center;
+}
+/*form handle*/
+/******************************************************************/
+form  .form-text{
+  font-size: 18pt;
+  font-weight: bolder;
+  display: inline-block;
+  height: 2em;
+  padding: 1em;
+  border: 0;
+  transition: all .5s ease;
+  background: rgba(250, 250, 250, 0.6);
+}
+form  .form-text::placeholder{
+  color: #5d5d5d;
+}
+form  .form-text:focus{
+  background: rgba(250, 250, 250, 0.9);
+  outline: none;
+}
+
+.search-form{
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.search-form > .form-text{
+  width: 500px;
+}
+.search-form > .form-text:focus{
+  width: 600px;
+}
+.search-form > .form-button{
+  padding: 5px;
+  font-size: 18pt;
+  display: inline-block;
+  line-height: 1em;
+  height: 2em;
+  width: 2em;
+  background: hsl(31, 90%, 45%);
+  color: #fefefe;
+  border: 0;
+  transition: all .3s;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+.search-form > .form-button:hover{
+  background: #fefefe;
+  color: hsl(30, 90%, 60%);
+  box-sizing: border-box;
+}
+.search-form > .form-button:active{
+  background: #fefefe;
+}
