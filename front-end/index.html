@@ -18,21 +18,46 @@
     <link rel="stylesheet" href="stylesheet/style.css">
   </head>
   <body>
+    <!-- preloader -->
     <!-- popup -->
-    <div class="fullscreen popup" id="popup">
-      <div class="popup-box" id="regis-input">
-        Register
-      </div>
-      <div class="popup-box" id="login-input">
-        Login
+    <div class="fullscreen" id="popup"></div>
+    <div id="popup-box">
+      <div class="popup-redirect-container">
+        <div class="closed-button" onclick="closePopup()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div id="login-input">
+          <h1>ลงชื่อเข้าสู่ระบบ</h1>
+          <form class="popup-form" action="" method="post">
+            <input class="form-text" type="text" name="email" value="" placeholder="อีเมล์ผู้ใช้งาน">
+            <input class="form-text" type="password" name="email" value="" placeholder="รหัสผ่าน">
+            <button class="form-button" type="submit">
+              เข้าสู่ระบบ
+            </button>
+          </form>
+        </div>
+        <div id="regis-input">
+          <h1>สมัครสมาชิก</h1>
+          <form class="popup-form" action="" method="post">
+            <input class="form-text" type="text" name="email" value="" placeholder="อีเมล์ที่สมัคร">
+            <input class="form-text" type="password" name="email" value="" placeholder="รหัสผ่าน">
+            <input class="form-text" type="password" name="email" value="" placeholder="ยืนยันรหัสผ่าน">
+            <button class="form-button" type="submit">
+              สมัครสมาชิก
+            </button>
+          </form>
+        </div>
+        <div class="popup-redirect">
+          <span id="input-change">ยังไม่มีบัญชีผู้ใช้?    <b onclick="regisForm()">สมัครสมาชิก</b></span>
+        </div>
       </div>
     </div>
     <!-- navbar -->
     <nav class="scroll-nav d-flex justify-content-between">
       <span class="logo">โลโก้เว็บ</span>
       <span class="align-self-center">
-        <button class="button-secondary" onclick="loginForm()">เข้าสู่ระบบ</button>
-        <button class="button-primary" onclick="regisForm()">สมัครสมาชิก</button>
+        <button class="button-secondary" onclick="loginForm()" id="login-nav">เข้าสู่ระบบ</button>
+        <button class="button-primary" onclick="regisForm()" id="regis-nav">สมัครสมาชิก</button>
       </span>
     </nav>
     <!-- hero section -->
