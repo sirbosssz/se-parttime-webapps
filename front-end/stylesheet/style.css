@@ -60,6 +60,7 @@
 .popup-redirect-container > .popup-redirect > span > b{
   font-weight: bold;
   cursor: pointer;
+  color: hsl(31, 90%, 45%);
 }
 .popup-redirect-container > .popup-redirect > span > b:hover{
   text-decoration: underline;
