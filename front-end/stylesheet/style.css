@@ -1,0 +1,315 @@
+*{
+  font-family: 'ThaiSansNueue';
+}
+.fullscreen{
+  min-height: 100vh;
+  width: 100%;
+}
+#popup{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  transition: all .5s;
+  filter: opacity(0);
+  visibility: hidden;
+  cursor: pointer;
+}
+#popup-box{
+  position: absolute;
+  left: calc(50% - 160px);
+  margin: auto;
+  margin-top: 90px;
+  background: rgba(250, 250, 250, 0.7);
+  max-width: 320px;
+  width: 100%;
+  min-height: 450px;
+  z-index: 1001;
+  filter: opacity(0);
+  visibility: hidden;
+}
+.closed-button{
+  margin: 20px;
+  margin-left: auto;
+  margin-bottom: 0;
+  background: #333;
+  padding-left: .4rem;
+  padding-top: .05rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: #fefefe;
+  cursor: pointer;
+}
+#popup-box .popup-redirect-container{
+  height: 430px;
+  position: relative;
+}
+.popup-redirect-container > .popup-redirect{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(250, 250, 250, 0.7);
+  box-shadow: -5px 0px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+.popup-redirect-container > .popup-redirect > span{
+  margin: auto;
+  font-size: 16pt;
+}
+.popup-redirect-container > .popup-redirect > span > b{
+  font-weight: bold;
+  cursor: pointer;
+  color: hsl(31, 90%, 45%);
+}
+.popup-redirect-container > .popup-redirect > span > b:hover{
+  text-decoration: underline;
+  color: hsl(31, 90%, 45%);
+}
+#login-input{
+  display: none;
+  transition: all .5s ease;
+}
+#login-input h1{
+  text-align: center;
+  margin-top: .5rem;
+  padding: 10px;
+  font-size: 30pt;
+  font-weight: bolder;
+}
+#regis-input{
+  display: none;
+  transition: all .5s ease;
+}
+#regis-input h1{
+  text-align: center;
+  margin-top: .3rem;
+  padding: 10px;
+  font-size: 30pt;
+  font-weight: bolder;
+}
+/*navbar*/
+/******************************************************************/
+.scroll-nav{
+  position: absolute;
+  z-index: 100;
+  color: #fefefe;
+  width: 100%;
+  padding-top: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  transition: all .3s ease;
+}
+.scroll-nav > .logo{
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: left;
+}
+.scroll-nav button{
+  margin-left: .5em;
+  font-size: 15pt;
+  line-height: 1.2em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-bottom: 5px;
+  background: rgba(0, 0, 0, 0);
+  border: 1.5px solid rgba(0, 0, 0, 0);
+  color: #fefefe;
+  font-weight: bolder;
+  transition: all .4s;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.scroll-nav .button-primary{
+  border: 1.5px solid #fefefe;
+}
+.scroll-nav .button-primary:hover{
+  border: 1.5px solid hsl(30, 90%, 60%);
+  background: hsl(30, 90%, 60%);
+}
+.scroll-nav .button-secondary:hover{
+  color: hsl(30, 90%, 60%);
+  border: 1.5px solid hsl(30, 90%, 60%);
+}
+/*hero section*/
+/******************************************************************/
+#hero{
+  background: rgba(30, 30, 30, 0.9);
+  color: #fefefe;
+  position: relative;
+}
+.hero-bg{
+  background-image: url('../images/background/josefa-ndiaz-312261.jpg');
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+#hero > .filter{
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  display: flex;
+}
+#hero h1{
+  font-size: 40pt;
+}
+#hero h2{
+  font-size: 30pt;
+}
+.flex-center{
+  margin: auto;
+  text-align: center;
+}
+/*form handle*/
+/******************************************************************/
+form  .form-text{
+  font-weight: bolder;
+  display: inline-block;
+  border: 0;
+  transition: all .5s ease;
+  background: rgba(250, 250, 250, 0.6);
+}
+form  .form-text::placeholder{
+  color: #5d5d5d;
+}
+form  .form-text:focus{
+  background: rgba(250, 250, 250, 0.9);
+  outline: none;
+}
+.popup-form > .form-text{
+  margin: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+  display: block;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  font-size: 16pt;
+  height: 30px;
+  padding: .8em;
+  font-weight: normal;
+}
+.popup-form > .form-button{
+  margin: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+  display: block;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background: hsl(31, 90%, 45%);
+  font-size: 18pt;
+  height: 2.3rem;
+  line-height: .3rem;
+  font-weight: bolder;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.popup-form > .form-button:hover{
+  box-shadow: 0 0 20px hsl(31, 90%, 45%);
+  border: 2px solid hsl(31, 90%, 45%);
+  color: #fefefe;
+}
+.search-form{
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.search-form > .form-text{
+  font-size: 18pt;
+  height: 2em;
+  padding: 1em;
+  width: 500px;
+}
+.search-form > .form-text:focus{
+  width: 600px;
+}
+.search-form > .form-button{
+  padding: 5px;
+  font-size: 18pt;
+  display: inline-block;
+  line-height: 1em;
+  height: 2em;
+  width: 2em;
+  background: hsl(31, 90%, 45%);
+  color: #fefefe;
+  border: 0;
+  transition: all .3s;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+.search-form > .form-button:hover{
+  background: #fefefe;
+  color: hsl(30, 90%, 60%);
+  box-sizing: border-box;
+}
+.search-form > .form-button:active{
+  background: #fefefe;
+}
+
+/*responsive breakpoints*/
+/******************************************************************/
+
+/*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199px) {
+
+}
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991px) {
+  #popup-box{
+    margin-top: calc(50vh - (450px/2));
+  }
+}
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767px) {
+  #popup-box{
+    margin-top: 0;
+  }
+  #login-nav{
+    border: 1.5px solid #fefefe;
+  }
+  #login-nav:hover{
+    border: 1.5px solid hsl(30, 90%, 60%);
+    background: hsl(30, 90%, 60%);
+    color: #fefefe;
+  }
+  #regis-nav{
+    display: none;
+  }
+  #hero h1{
+    font-size: 35pt;
+  }
+  #hero h2{
+    font-size: 25pt;
+  }
+  .search-form > .form-text:focus{
+    width: 500px;
+  }
+  .scroll-nav{
+    padding-top: 15px;
+  }
+}
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+  #popup-box{
+    margin-top: calc(50vh - (450px/2));
+  }
+  .search-form > .form-text{
+    width: calc(90vw - 2em);
+  }
+  .search-form > .form-text:focus{
+    width: calc(95vw - 2em);
+  }
+  #hero h1{
+    font-size: 25pt;
+  }
+  #hero h2{
+    font-size: 20pt;
+  }
+  .scroll-nav{
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  #hero, #hero .fullscreen{
+    min-height: 450px;
+  }
+
+}
