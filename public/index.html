@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <!-- required meta tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- firebase cdn -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <!-- title -->
+    <title>หางานพาร์ทไทม์ | ชุมชนคนตังค์น้อย</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="framework/bootstrap.min.css">
+    <!-- embeded fonts -->
+    <link rel="stylesheet" href="fonts/font.css">
+    <script src="https://use.fontawesome.com/9a89b9a705.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="stylesheet/style.css">
+  </head>
+  <body>
+    <!-- preloader -->
+    <!-- popup -->
+    <div class="fullscreen" id="popup"></div>
+    <div id="popup-box">
+      <div class="popup-redirect-container">
+        <div class="closed-button" onclick="closePopup()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div id="login-input">
+          <h1>ลงชื่อเข้าสู่ระบบ</h1>
+          <form class="popup-form" action="javascript:getSignin()" method="post">
+            <input id="email" class="form-text" type="text" name="email" value="" placeholder="อีเมล์ผู้ใช้งาน">
+            <input id="password" class="form-text" type="password" name="email" value="" placeholder="รหัสผ่าน">
+            <button id="login" class="form-button" type="submit">
+              เข้าสู่ระบบ
+            </button>
+          </form>
+        </div>
+        <div id="regis-input">
+          <h1>สมัครสมาชิก</h1>
+          <form class="popup-form" action="javascript:getSignup()" method="post">
+            <input id="email" class="form-text" type="text" name="email" value="" placeholder="อีเมล์ที่สมัคร">
+            <input id="password" class="form-text" type="password" name="email" value="" placeholder="รหัสผ่าน">
+            <input class="form-text" type="password" name="email" value="" placeholder="ยืนยันรหัสผ่าน">
+            <button id="regis" class="form-button" type="submit">
+              สมัครสมาชิก
+            </button>
+          </form>
+        </div>
+        <div class="popup-redirect">
+          <span id="input-change">ยังไม่มีบัญชีผู้ใช้?    <b onclick="regisForm()">สมัครสมาชิก</b></span>
+        </div>
+      </div>
+    </div>
+    <!-- navbar -->
+    <nav class="scroll-nav d-flex justify-content-between">
+      <span class="logo"><img src="images/logo/Logo-02.png" height="60px"></span>
+      <span class="align-self-center">
+        <button class="button-secondary" onclick="loginForm()" id="login-nav">เข้าสู่ระบบ</button>
+        <button class="button-primary" onclick="regisForm()" id="regis-nav">สมัครสมาชิก</button>
+      </span>
+    </nav>
+    <!-- hero section -->
+    <section id="hero" class="fullscreen">
+      <div class="fullscreen hero-bg"></div>
+      <div class="fullscreen filter">
+        <div class="flex-center">
+          <h1>ชุมชนคนตังค์น้อย</h1>
+          <h2>ค้นหางาน part time ที่เหมาะสมกับคุณ</h2>
+          <form class="" action="index.html" method="post">
+            <div class="search-form input-group">
+              <input class="form-text" type="text" name="search" value="" placeholder="ค้นหางานที่สนใจ">
+              <button class="form-button" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section style="height: 200px;">
+
+    </section>
+
+    <!-- firebase auth -->
+    <script src="javascript/app.js"></script>
+    <!-- bootstrap js -->
+    <script src="framework/jquery.min.js"></script>
+    <script src="framework/popper.js"></script>
+    <script src="framework/bootstrap.min.js"></script>
+    <!-- custom js -->
+    <script src="javascript/index.js"></script>
+  </body>
+</html>
