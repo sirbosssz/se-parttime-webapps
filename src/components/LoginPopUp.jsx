@@ -7,9 +7,19 @@ export default class LoginPopUp extends Component {
         this.state = {
             email: '',
             password: '',
-            isLogin: false,
             errorMessage: '',
+            isLogin: false,
         };
+    }
+    componentDidMount = () => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ isLogin: true })
+                this.hide()
+            } else {
+                this.setState({ isLogin: false })
+            }
+        })
     }
     //handle eveytime login form change
     handleLoginChange = event => {
@@ -30,22 +40,25 @@ export default class LoginPopUp extends Component {
             var errorCode = error.code;
             var errorMessage = error.message;
             this.setState({
-                isLogin: false,
-                email: '',
-                password: '',
-                errorMessage: errorMessage,
+                errorMessage: 'Can\'t Login: ' + errorMessage,
             })
             console.error(errorCode + ": " + errorMessage);
         })
-        this.setState({ isLogin: true })
-        event.preventDefault();
+        this.setState({
+            email: '',
+            password: '',
+        })
         if (this.state.isLogin) {
             this.hide();
         }
+        event.preventDefault();
     }
 
     hide = () => {
         document.getElementById('popup').classList.add('hide');
+        this.setState({
+            errorMessage: "",
+        })
     }
     render() {
         return (
@@ -53,7 +66,9 @@ export default class LoginPopUp extends Component {
                 <div className="popup-background fullscreen" onClick={this.hide}></div>
                 <div className="popup-form">
                     <form onSubmit={this.handleLogin} id='loginForm' method='POST'>
-                        <span>{this.state.errorMessage}</span>
+                        {this.state.errorMessage &&
+                            <span className='error'>{this.state.errorMessage}</span>
+                        }
                         <input type="text" name="email" value={this.state.email} onChange={this.handleLoginChange} placeholder='email' className='form-control' />
                         <input type="password" name="password" value={this.state.password} onChange={this.handleLoginChange} placeholder='password' className='form-control' />
                         <input type="submit" value="login" className='btn btn-primary' />

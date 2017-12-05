@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { auth } from '../firebase';
+import firebase, { auth } from '../firebase';
 
-class NavBar extends Component {
+
+
+export default class NavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
             user: null,
+            fullname: '',
         }
     }
     // keep user data when refresh
@@ -13,6 +16,22 @@ class NavBar extends Component {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 this.setState({ user })
+                firebase.database().ref('/users/').once('value', snapshot => {
+                    let found = false
+                    snapshot.forEach(childSnapshot => {
+                        if (childSnapshot.val().email === this.state.user.email) {
+                            found = true
+                            this.setState({
+                                fullname: childSnapshot.val().name_thai.first_name + " " + childSnapshot.val().name_thai.last_name
+                            })
+                        }
+                    })
+                    if (!found) {
+                        this.setState({
+                            fullname: 'no-fullname',
+                        })
+                    }
+                })
             }
         })
     }
@@ -40,7 +59,7 @@ class NavBar extends Component {
                     </div>
                 ) : ( //if logged in
                         <div>
-                            <span>Hello {this.state.user.email} </span>
+                            <span>ยินดีต้อนรับ คุณ{this.state.fullname} </span>
                             <button className='btn btn-dark' onClick={this.logout}>Logout</button>
                         </div>
                     )}
@@ -48,7 +67,3 @@ class NavBar extends Component {
         )
     }
 }
-
-
-
-export default NavBar;

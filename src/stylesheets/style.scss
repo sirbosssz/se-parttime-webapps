@@ -1,4 +1,6 @@
 $black1: #333;
+$white1: #fefefe;
+$white2: #eee;
 
 body {
   margin: 0;
@@ -7,7 +9,7 @@ body {
 }
 .navbar{
   position: fixed;
-  background: #eee;
+  background: $white2;
   padding: 1em;
   width: 100%;
 }
@@ -38,10 +40,19 @@ body {
 }
 .popup-form{
   background: #eee;
-  min-width: 100px;
-  min-height: 200px;
+  width: 300px;
+  min-height: 1px;
   z-index: 10001;
   padding: .5em;
+}
+.popup-form .error{
+  background: red;
+  color: $white1;
+  display: block;
+  font-size: 10pt;
+  padding: .5em;
+  margin-bottom: .5em;
+  border-radius: .4em;
 }
 #popup input{
   display: block;
