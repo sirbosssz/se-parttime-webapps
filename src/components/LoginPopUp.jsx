@@ -9,6 +9,7 @@ export default class LoginPopUp extends Component {
             password: '',
             errorMessage: '',
             isLogin: false,
+            button: 'Login',
         };
     }
     componentDidMount = () => {
@@ -36,11 +37,13 @@ export default class LoginPopUp extends Component {
         //check input
         //will do this later...
         //login
+        this.setState({button: 'logging in...'})
         auth.signInWithEmailAndPassword(this.state.email, this.state.password).catch(error => {
             var errorCode = error.code;
             var errorMessage = error.message;
             this.setState({
                 errorMessage: 'Can\'t Login: ' + errorMessage,
+                button: 'Login'
             })
             console.error(errorCode + ": " + errorMessage);
         })
@@ -49,7 +52,9 @@ export default class LoginPopUp extends Component {
             password: '',
         })
         if (this.state.isLogin) {
+            
             this.hide();
+            this.setState({button: 'Login'});
         }
         event.preventDefault();
     }
@@ -63,7 +68,7 @@ export default class LoginPopUp extends Component {
     render() {
         return (
             <div className="fullscreen hide" id='popup'>
-                <div className="popup-background fullscreen" onClick={this.hide}></div>
+                <div className="popup-background fullscreen"></div>
                 <div className="popup-form">
                     <form onSubmit={this.handleLogin} id='loginForm' method='POST'>
                         {this.state.errorMessage &&
@@ -71,7 +76,7 @@ export default class LoginPopUp extends Component {
                         }
                         <input type="text" name="email" value={this.state.email} onChange={this.handleLoginChange} placeholder='email' className='form-control' />
                         <input type="password" name="password" value={this.state.password} onChange={this.handleLoginChange} placeholder='password' className='form-control' />
-                        <input type="submit" value="login" className='btn btn-primary' />
+                        <input type="submit" value={this.state.button} className='btn btn-primary' />
 
                     </form>
                 </div>

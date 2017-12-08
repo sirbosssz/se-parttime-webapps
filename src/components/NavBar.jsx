@@ -28,7 +28,7 @@ export default class NavBar extends Component {
                     })
                     if (!found) {
                         this.setState({
-                            fullname: 'no-fullname',
+                            fullname: 'ไม่มีชื่อ',
                         })
                     }
                 })
