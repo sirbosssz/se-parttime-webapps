@@ -5,8 +5,8 @@ $orange2: #ffa13d;
 $black1: #333333;
 $black2: #121212;
 
+// Navbar
 .navbar{
-    // width: 100vw;
     min-height: 30px;
     background: $white2;    
 }
@@ -16,4 +16,44 @@ $black2: #121212;
 .navbar .usermenu .menu-item{
     margin-left: 1em;
     cursor: pointer;
+}
+
+// Page
+.fullscreen{
+    min-height: 100vh;
+}
+// Home Guest
+#herosection-guest{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#detailssection-guest{
+    background: $white2;
+    min-height: 100px;
+}
+#examplejobsection-guest{
+    background: $white1;
+    min-height: 100px;
+}
+#moresection-guest{
+    background: $white2;
+    min-height: 200px;
+}
+
+// Buttons
+button{
+    border: 0;
+    margin-left: .5em;
+    margin-right: .5em;
+    cursor: pointer;
+}
+.button-area{
+    text-align: center;
+}
+.login-button{
+    background: $orange1;
+}
+.register-button{
+    background: $orange2;
 }
