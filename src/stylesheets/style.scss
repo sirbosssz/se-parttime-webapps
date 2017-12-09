@@ -1,0 +1,19 @@
+$white1: #fefefe;
+$white2: #eeeeee;
+$orange1: #e93700;
+$orange2: #ffa13d;
+$black1: #333333;
+$black2: #121212;
+
+.navbar{
+    // width: 100vw;
+    min-height: 30px;
+    background: $white2;    
+}
+.navbar .usermenu{
+    float: right;
+}
+.navbar .usermenu .menu-item{
+    margin-left: 1em;
+    cursor: pointer;
+}

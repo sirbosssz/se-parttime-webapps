@@ -1,0 +1,10 @@
+.navbar {
+  min-height: 30px;
+  background: #eeeeee; }
+
+.navbar .usermenu {
+  float: right; }
+
+.navbar .usermenu .menu-item {
+  margin-left: 1em;
+  cursor: pointer; }

@@ -2,9 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 
+// stylesheet import
+import './stylesheets/style.css';
+
+import {
+    NavBar,
+    PageContainer,
+    Footer,
+} from './components'
+
 ReactDOM.render(
     <div>
-        Hello World
+        <NavBar />
+        <PageContainer />
+        <Footer />
     </div>
     , document.getElementById('root')
 );
