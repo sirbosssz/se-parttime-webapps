@@ -97,3 +97,11 @@ button {
 
 .register-button {
   background: #ffa13d; }
+
+#searchsection-user {
+  background: #fefefe;
+  min-height: 200px; }
+
+#joblistsection-user {
+  background: #eeeeee;
+  min-height: 500px; }

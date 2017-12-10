@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import firebase from './../../../firebase';
 
 class ProfileIcon extends Component {
     constructor() {
