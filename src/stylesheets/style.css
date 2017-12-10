@@ -1,5 +1,5 @@
 .navbar {
-  min-height: 30px;
+  height: 50px;
   background: #eeeeee; }
 
 .navbar .usermenu {
@@ -8,6 +8,23 @@
 .navbar .usermenu .menu-item {
   margin-left: 1em;
   cursor: pointer; }
+
+.menu-item .dropdown {
+  display: inline; }
+
+#dropmenu {
+  background: #eeeeee;
+  position: absolute;
+  right: .5em;
+  top: 50px; }
+
+#dropmenu span {
+  display: block;
+  width: 100%;
+  padding: .5em; }
+
+#dropmenu span:hover {
+  background: rgba(0, 0, 0, 0.3); }
 
 footer {
   width: 100%;
@@ -38,6 +55,13 @@ footer {
   width: 300px;
   height: 400px;
   left: calc(50vw - 150px); }
+
+.login-container {
+  padding: 1em; }
+
+.login-container input {
+  display: block;
+  margin-bottom: 1em; }
 
 .fullscreen {
   min-height: 100vh; }

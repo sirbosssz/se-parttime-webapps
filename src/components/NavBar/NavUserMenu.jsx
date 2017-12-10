@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import firebase from './../../firebase';
 import NavMenuTop from './NavMenuTop';
 
 export default class NavUserMenu extends Component {
@@ -8,6 +8,20 @@ export default class NavUserMenu extends Component {
         this.state = {
             isUser: false,
         }
+    }
+
+    componentDidMount = () => {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                this.setState({
+                    isUser: true
+                })
+            } else {
+                this.setState({
+                    isUser: false
+                })
+            }
+        })
     }
     render() {
         return (
