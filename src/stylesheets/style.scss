@@ -8,7 +8,7 @@ $popup-background: rgba(0,0,0,0.8);
 
 // Navbar
 .navbar{
-    min-height: 30px;
+    height: 50px;
     background: $white2;    
 }
 .navbar .usermenu{
@@ -17,6 +17,24 @@ $popup-background: rgba(0,0,0,0.8);
 .navbar .usermenu .menu-item{
     margin-left: 1em;
     cursor: pointer;
+}
+.menu-item .dropdown{
+    display: inline;
+}
+#dropmenu{
+    background: $white2;
+    position: absolute;
+    // width: 100px;
+    right: .5em;
+    top: 50px;
+}
+#dropmenu span{
+    display: block;
+    width: 100%;
+    padding: .5em;
+}
+#dropmenu span:hover{
+    background: rgba(0,0,0,0.3);
 }
 // Footer
 footer{
@@ -49,6 +67,13 @@ footer{
     width: 300px;
     height: 400px;
     left: calc(50vw - 150px);
+}
+.login-container{
+    padding: 1em;
+}
+.login-container input{
+    display: block;
+    margin-bottom: 1em;
 }
 // Page
 .fullscreen{
@@ -88,4 +113,14 @@ button{
 }
 .register-button{
     background: $orange2;
+}
+
+// Home User
+#searchsection-user{
+    background: $white1;
+    min-height: 200px;
+}
+#joblistsection-user{
+    background: $white2;
+    min-height: 500px;
 }
