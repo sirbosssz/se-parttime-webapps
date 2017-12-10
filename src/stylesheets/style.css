@@ -9,6 +9,11 @@
   margin-left: 1em;
   cursor: pointer; }
 
+footer {
+  width: 100%;
+  height: 60px;
+  background: #333; }
+
 .popup {
   position: fixed;
   min-height: 100vh;

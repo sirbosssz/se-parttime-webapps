@@ -8,7 +8,7 @@ export default class PageContainer extends Component {
     render() {
         return (
             <div>
-                <HomeGuest />
+                <HomeGuest store={this.props.store} />
             </div>
         )
     }
