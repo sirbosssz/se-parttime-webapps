@@ -4,6 +4,7 @@ $orange1: #e93700;
 $orange2: #ffa13d;
 $black1: #333333;
 $black2: #121212;
+$popup-background: rgba(0,0,0,0.8);
 
 // Navbar
 .navbar{
@@ -18,6 +19,32 @@ $black2: #121212;
     cursor: pointer;
 }
 
+// popup
+.popup{
+    position: fixed;
+    min-height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+}
+.hide{
+    display: none;
+}
+.popup-background{
+    position: absolute;
+    background: $popup-background;
+    width: 100vw;
+    min-height: 100vh;
+}
+.popup-inner{
+    position: absolute;
+    background: $white1;
+    top: 50px;
+}
+.login-popup{
+    width: 300px;
+    height: 400px;
+    left: calc(50vw - 150px);
+}
 // Page
 .fullscreen{
     min-height: 100vh;
