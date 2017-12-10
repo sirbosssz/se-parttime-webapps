@@ -9,10 +9,12 @@ import {
     NavBar,
     PageContainer,
     Footer,
+    PagePopup,
 } from './components'
 
 ReactDOM.render(
     <div>
+        <PagePopup />
         <NavBar />
         <PageContainer />
         <Footer />

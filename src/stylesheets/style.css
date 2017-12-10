@@ -9,6 +9,31 @@
   margin-left: 1em;
   cursor: pointer; }
 
+.popup {
+  position: fixed;
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 1000; }
+
+.hide {
+  display: none; }
+
+.popup-background {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  min-height: 100vh; }
+
+.popup-inner {
+  position: absolute;
+  background: #fefefe;
+  top: 50px; }
+
+.login-popup {
+  width: 300px;
+  height: 400px;
+  left: calc(50vw - 150px); }
+
 .fullscreen {
   min-height: 100vh; }
 
