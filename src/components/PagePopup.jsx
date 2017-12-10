@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import {
     LoginPopup,
     RegisterPopup,
 } from './Popup/';
 
-export default class PagePopup extends Component {
+class PagePopup extends Component {
     constructor() {
         super();
         this.state = {
-            popup: 'login',
+            popup: '',
         };
+    }
+
+    componentDidMount = () => {
+        this.update = setInterval(() => {
+            this.setState({
+                popup: this.props.popup
+            })
+        }, 1000/30)
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.update);
     }
 
     checkPopup = () => {
@@ -24,10 +37,15 @@ export default class PagePopup extends Component {
         }
     }
 
+    closePopup = () => {
+        document.getElementById('popup').classList.add('hide');
+        this.props.popupClose();
+    }
+
     render() {
         return (
             <div id="popup" className="popup hide">
-                <div className="popup-background"></div>
+                <div className="popup-background" onClick={this.closePopup}></div>
                 <div className="popup-inner login-popup">
                     {this.checkPopup()}
                 </div>
@@ -35,3 +53,22 @@ export default class PagePopup extends Component {
         )
     }
 }
+
+const mapStatetoProps = state => {
+    return {
+        popup: state.popup,
+    }
+}
+
+const mapDispatchtoProps = dispatch => {
+    return {
+        popupClose: () => {
+            dispatch({
+                type: 'POPUP',
+                payload: '',
+            })
+        }
+    }
+}
+
+export default connect(mapStatetoProps, mapDispatchtoProps)(PagePopup);
