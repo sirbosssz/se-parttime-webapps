@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import {
     HomeGuest,
-    HomeUser
+    HomeUser,
+    RegisFill,
 } from './Pages';
 
 class PageContainer extends Component {
@@ -26,6 +27,9 @@ class PageContainer extends Component {
                 } else {
                     page = <HomeUser />
                 }
+                break;
+            case 'Regis':
+                page = <RegisFill />
                 break;
             default:
                 page = <HomeGuest />

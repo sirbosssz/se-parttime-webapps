@@ -16,8 +16,10 @@ class App extends Component {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 database.ref('/users/').once('value', snapshot => {
+                    let found = false
                     snapshot.forEach(childSnapshot => {
                         if (user.email === childSnapshot.val().email) {
+                            found = true
                             this.props.addUser({
                                 username: childSnapshot.val().username,
                                 email: childSnapshot.val().email,
@@ -32,6 +34,9 @@ class App extends Component {
                             })
                         }
                     })
+                    if (!found) {
+                        this.props.changePage('Regis');
+                    }
                 })
             }
         })
@@ -59,6 +64,12 @@ const mapDispatchtoProps = dispatch => {
             dispatch({
                 type: 'USER',
                 payload: username
+            })
+        },
+        changePage: pageName => {
+            dispatch({
+                type: 'PAGE',
+                payload: pageName,
             })
         }
     }

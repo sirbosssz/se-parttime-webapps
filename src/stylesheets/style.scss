@@ -65,14 +65,17 @@ footer{
 }
 .login-popup{
     width: 300px;
-    height: 400px;
+    min-height: 400px;
     left: calc(50vw - 150px);
 }
-.login-container{
+.login-container, .register-container{
     padding: 1em;
 }
-.login-container input{
+.login-container input, .register-container div{
     display: block;
+    margin-bottom: 1em;
+}
+.register-container input{
     margin-bottom: 1em;
 }
 // Page
@@ -123,4 +126,16 @@ button{
 #joblistsection-user{
     background: $white2;
     min-height: 500px;
+}
+
+//regis fill
+#regis{
+    display: block;
+    min-height: 100vh;
+}
+#regis form div{
+    padding: .5em;
+}
+#regis form div *{
+    margin-left: .5em 
 }
