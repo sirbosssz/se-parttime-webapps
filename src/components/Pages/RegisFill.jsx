@@ -114,7 +114,7 @@ class RegisFill extends Component {
                             <input type="date" name="birthday" value={this.state.birthday} onChange={this.handleInputChange} />
                         </div>
                         <div>
-                            <input type="text" name="desc" placeholder="ข้อมูลอื่นๆ" value={this.state.desc} onChange={this.handleInputChange} />
+                            <textarea type="text" name="desc" placeholder="ข้อมูลอื่นๆ" value={this.state.desc} onChange={this.handleInputChange} />
                         </div>
                         <div>
                             <input type="submit" value="ยืนยัน" />

@@ -106,8 +106,17 @@ button {
   min-height: 200px; }
 
 #joblistsection-user {
+  padding: 1rem;
   background: #eeeeee;
   min-height: 500px; }
+
+#joblistsection-user .head {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em; }
+
+#joblistsection-user .head span, #joblistsection-user .head button {
+  display: inline-block; }
 
 #regis {
   display: block;
@@ -118,3 +127,16 @@ button {
 
 #regis form div * {
   margin-left: .5em; }
+
+#jobcreate {
+  min-height: 100vh;
+  padding: 1em; }
+
+#jobcreate .btn {
+  cursor: pointer; }
+
+#jobcard {
+  background: #fefefe;
+  width: 100%;
+  min-height: 100px;
+  padding: 1em; }
