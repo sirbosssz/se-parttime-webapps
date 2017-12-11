@@ -27,6 +27,9 @@ class PageContainer extends Component {
                     page = <HomeUser />
                 }
                 break;
+            case 'Regis':
+                page = 'Register'
+                break;
             default:
                 page = <HomeGuest />
                 break;
