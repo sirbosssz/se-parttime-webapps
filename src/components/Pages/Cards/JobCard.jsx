@@ -4,6 +4,12 @@ import firebase from './../../../firebase';
 
 const database = firebase.database();
 class JobCard extends Component {
+    constructor() {
+        super();
+        this.state = {
+            registered: [],
+        }
+    }
     register = () => {
         console.log(this.props.user.username + ' register new job');
         let registered = []
@@ -28,13 +34,44 @@ class JobCard extends Component {
 
     }
 
+    viewRegister = () => {
+        console.log('view registered')
+        let registered = []
+        let newRegistered = []
+        database.ref('posts/' + this.props.job.post_key).once('value').then(snapshot => {
+            registered = (snapshot.val() && snapshot.val().registered_user) || [];
+            console.log('registerd ' + registered)
+            registered.forEach(element => {
+                database.ref('users/' + element).once('value').then(snapshot => {
+                    let user = {
+                        username: snapshot.val().username,
+                        first_name: snapshot.val().name_thai.first_name,
+                        last_name: snapshot.val().name_thai.last_name,
+                        email: snapshot.val().email,
+                    }
+                    newRegistered.push(user)
+                    this.setState({
+                        registered: newRegistered
+                    })
+                })
+            });
+        });
+
+    }
+
     render() {
         let button = null;
         if (this.props.user.username === this.props.job.owner) {
-            button = (<button>ดูรายชื่อผู้สมัคร</button>)
+            button = (<button onClick={this.viewRegister}>ดูรายชื่อผู้สมัคร</button>)
         } else {
             button = (<button onClick={this.register}>สมัคร</button>)
         }
+
+        var registered = [];
+        this.state.registered.forEach(items => {
+            let item = <li>ชื่อ:{items.first_name} {items.last_name}, email:{items.email}</li>
+            registered.push(item)
+        })
         return (
             <section id="jobcard">
                 <span>{this.props.job.title} </span>
@@ -43,6 +80,9 @@ class JobCard extends Component {
                 <span>สัญญาจ้าง: {this.props.job.duration}</span> เดือน <br />
                 <span>รายละเอียด: <br />{this.props.job.desc}</span> <br />
                 {button}
+                <ul>
+                    {registered}
+                </ul>
             </section>
         )
     }

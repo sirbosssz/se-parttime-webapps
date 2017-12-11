@@ -38,7 +38,11 @@ class JobListSection extends Component {
     }
 
     render() {
-        let listLength = this.state.card.length;
+        let cards = [];
+        for (let index = this.state.card.length; index >= 0 ; index--) {
+            const element = this.state.card[index];
+            cards.push(element)
+        }
         return (
             <section id="joblistsection-user">
                 <div className="head">
@@ -48,11 +52,8 @@ class JobListSection extends Component {
                     </Link>
                 </div>
                 <div className="container">
-                    <div className="row">
-                        {this.state.card[listLength-1]}
-                        {this.state.card[listLength-2]}
-                        {this.state.card[listLength-3]}
-                        {this.state.card[listLength-4]}
+                    <div className="row" key={cards.toString()}>
+                        {cards}
                     </div>
                 </div>
             </section>
