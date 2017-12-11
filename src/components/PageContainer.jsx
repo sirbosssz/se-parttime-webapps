@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom';
+
+import {
     HomeGuest,
     HomeUser,
     RegisFill,
+    JobCreate,
 } from './Pages';
 
 class PageContainer extends Component {
@@ -23,22 +29,26 @@ class PageContainer extends Component {
         switch (this.props.page) {
             case 'Home':
                 if (Object.keys(this.props.user).length === 0) {
-                    page = <HomeGuest />
+                    page = <Route exact path="/" component={HomeGuest} />
                 } else {
-                    page = <HomeUser />
+                    page = <Route exact path="/" component={HomeUser} />
                 }
                 break;
             case 'Regis':
-                page = <RegisFill />
+                page = <Route path="/" component={RegisFill} />
                 break;
             default:
-                page = <HomeGuest />
+                page = <Route exact path="/" component={HomeGuest} />
+
                 break;
         }
         return (
-            <div>
-                {page}
-            </div>
+            <Router>
+                <div>
+                    {page}
+                    <Route path="/create" component={JobCreate} />
+                </div>
+            </Router>
         )
     }
 }

@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-export default class JobListSection extends Component {
+class JobListSection extends Component {
     render() {
-        return(
+        return (
             <section id="joblistsection-user">
-                Joblist Section
+                <div className="head">
+                    <span>งานที่รับสมัครล่าสุด</span>
+                    <Link to={`/create`}>
+                        <button className="btn">ประกาศรับสมัครงานพาร์ทไทม์</button>
+                    </Link>
+                </div>
+                <div className="container">
+                    รายการรับสมัครล่าสุด
+                </div>
             </section>
         )
     }
 }
+
+export default JobListSection
