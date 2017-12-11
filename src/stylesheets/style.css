@@ -108,3 +108,13 @@ button {
 #joblistsection-user {
   background: #eeeeee;
   min-height: 500px; }
+
+#regis {
+  display: block;
+  min-height: 100vh; }
+
+#regis form div {
+  padding: .5em; }
+
+#regis form div * {
+  margin-left: .5em; }

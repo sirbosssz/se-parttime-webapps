@@ -5,7 +5,8 @@ class ProfileIcon extends Component {
     constructor() {
         super();
         this.state = {
-            fullname: 'fullname',
+            fullname: 'ยังไม่ได้กรอกข้อมูลสมัครสมาชิก',
+            image: ""
         }
     }
 
@@ -13,7 +14,8 @@ class ProfileIcon extends Component {
         this.update = setInterval(() => {
             if (Object.keys(this.props.user).length !== 0) {
                 this.setState({
-                    fullname: this.props.user.name_thai.first_name + " " + this.props.user.name_thai.last_name
+                    fullname: this.props.user.name_thai.first_name + " " + this.props.user.name_thai.last_name,
+                    image: ''
                 })
             }
         }, 500);
@@ -26,9 +28,10 @@ class ProfileIcon extends Component {
     render() {
         return (
             <span className="menu-item">
-                <img src="" alt="Profile Icon" />
+                {this.state.image}
                 <span>{this.state.fullname}</span>
             </span>
+
         )
     }
 }
