@@ -10,6 +10,9 @@ class MenuDesktopIcon extends Component {
     logout = () => {
         firebase.auth().signOut();
         this.props.removeUser();
+        if(this.props.page === 'Regis'){
+            this.props.changePage('Home');
+        }
     }
 
     render() {
@@ -30,6 +33,7 @@ class MenuDesktopIcon extends Component {
 const mapStatetoProps = state => {
     return {
         user: state.user,
+        page: state.page,
     }
 }
 const mapDispatchtoProps = dispatch => {
@@ -38,6 +42,12 @@ const mapDispatchtoProps = dispatch => {
             dispatch({
                 type: 'USER',
                 payload: {}
+            })
+        },
+        changePage: pageName => {
+            dispatch({
+                type: 'PAGE',
+                payload: pageName,
             })
         }
     }

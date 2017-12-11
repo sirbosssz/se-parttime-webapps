@@ -9,9 +9,6 @@ class RegisterPopup extends Component {
     constructor() {
         super();
         this.state = {
-            username: '',
-            th_fname: '',
-            th_lname: '',
             email: '',
             password: '',
             repeatPass: '',
@@ -20,14 +17,11 @@ class RegisterPopup extends Component {
     }
 
     handleSubmit = event => {
-        let username = this.state.username,
-            th_fname = this.state.th_fname,
-            th_lname = this.state.th_lname,
-            email = this.state.email,
+        let email = this.state.email,
             password = this.state.password,
             repeatPass = this.state.repeatPass;
         //check input
-        if (username.length !== 0 && email.length !== 0 && password.length !== 0) {
+        if (email.length !== 0 && password.length !== 0) {
             //check password
             if (password === repeatPass) {
                 if (password.length > 6 && password.length < 14) {
@@ -44,9 +38,6 @@ class RegisterPopup extends Component {
                         if (childSnapshot.val().email === email) {
                             this.setState({ error: 'อีเมล์ซ้ำกับในระบบ' })
                         }
-                        if (childSnapshot.val().username === username) {
-                            this.setState({ error: 'ชื่อผู้ใช้ซ้ำกับในระบบ' })
-                        }
                     })
                 })
                 if (this.state.error) {
@@ -56,14 +47,6 @@ class RegisterPopup extends Component {
                     //create auth
                     auth.createUserWithEmailAndPassword(email, password).catch(error => {
                         console.log('%cerror: ' + error.code + error.message, 'color:red');
-                    })
-                    this.props.addUser({
-                        username: username,
-                        email: email,
-                        name_thai: {
-                            first_name: th_fname,
-                            last_name: th_lname
-                        }
                     })
                     this.props.changePage('Regis');
                     // close popup
@@ -94,11 +77,6 @@ class RegisterPopup extends Component {
                     Register
                 </h1>
                 <form method='POST' onSubmit={this.handleSubmit}>
-                    <div>
-                        <input className='textinput' type="text" name="th_fname" placeholder="ชื่อ" value={this.state.th_fname} onChange={this.handleInputChange} />
-                        <input className='textinput' type="text" name="th_lname" placeholder="นามสกุล" value={this.state.th_lname} onChange={this.handleInputChange} />
-                    </div>
-                    <input className='textinput' type="text" name="username" placeholder="ชื่อผู้ใช้" value={this.state.username} onChange={this.handleInputChange} />
                     <input className='textinput' type="email" name="email" placeholder="อีเมล์" value={this.state.email} onChange={this.handleInputChange} />
                     <input className='textinput' type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.handleInputChange} />
                     <input className='textinput' type="password" name="repeatPass" placeholder="ยืนยันรหัสผ่าน" value={this.state.repeatPass} onChange={this.handleInputChange} />
