@@ -44,9 +44,10 @@ class JobCreate extends Component {
             title: title,
             post_key: postKey,
             desc: desc,
-            work_tim: time,
+            work_time: time,
             duration: duration,
             location: location,
+            registerd_user: [],
         }
         firebase.database().ref('posts/' + postKey).set(postdata);
         console.log('new post' + postKey);

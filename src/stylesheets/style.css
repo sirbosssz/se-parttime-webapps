@@ -112,7 +112,8 @@ button {
 
 #joblistsection-user .head {
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 1em; }
 
 #joblistsection-user .head span, #joblistsection-user .head button {
   display: inline-block; }
@@ -133,3 +134,9 @@ button {
 
 #jobcreate .btn {
   cursor: pointer; }
+
+#jobcard {
+  background: #fefefe;
+  width: 100%;
+  min-height: 100px;
+  padding: 1em; }
