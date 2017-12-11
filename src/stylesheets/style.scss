@@ -68,10 +68,10 @@ footer{
     height: 400px;
     left: calc(50vw - 150px);
 }
-.login-container{
+.login-container, .register-container{
     padding: 1em;
 }
-.login-container input{
+.login-container input, .register-container input{
     display: block;
     margin-bottom: 1em;
 }
