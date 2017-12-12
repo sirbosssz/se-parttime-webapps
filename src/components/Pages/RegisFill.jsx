@@ -95,26 +95,29 @@ class RegisFill extends Component {
                     <h1>กรอกข้อมูลสมัครเข้าใช้งาน</h1>
                     <form onSubmit={this.handleSubmit} method="post">
                         <div>
-                            <input type="text" name="username" placeholder="ชื่อผู้ใช้/username" value={this.state.username} onChange={this.handleInputChange} />
-                            <input type="file" name="profileImg" value={this.state.profileImg} onChange={this.handleInputChange} accept="image/*" />
+                            Username : <input type="text" name="username" placeholder="ชื่อผู้ใช้/username" value={this.state.username} onChange={this.handleInputChange} />
                         </div>
                         <div>
-                            <input type="text" name="th_prefix" placeholder="คำนำหน้าชื่อ" value={this.state.th_prefix} onChange={this.handleInputChange} />
-                            <input type="text" name="th_fname" placeholder="ชื่อ(ไม่ต้องมีคำนำหน้า)" value={this.state.th_fname} onChange={this.handleInputChange} />
-                            <input type="text" name="th_lname" placeholder="นามสกุล" value={this.state.th_lname} onChange={this.handleInputChange} />
+                            คำนำหน้าชื่อ : <input type="text" name="th_prefix" placeholder="นาย/นาง" value={this.state.th_prefix} onChange={this.handleInputChange} />
+                            Name : <input type="text" name="th_fname" placeholder="ชื่อ(ไม่ต้องมีคำนำหน้า)" value={this.state.th_fname} onChange={this.handleInputChange} />
+                            Lastname : <input type="text" name="th_lname" placeholder="นามสกุล" value={this.state.th_lname} onChange={this.handleInputChange} />
                         </div>
                         <div>
-                            <input type="text" name="en_fname" placeholder="Name" value={this.state.en_fname} onChange={this.handleInputChange} />
-                            <input type="text" name="en_lname" placeholder="Surname" value={this.state.en_lname} onChange={this.handleInputChange} />
+                            English Name : <input type="text" name="en_fname" placeholder="Name" value={this.state.en_fname} onChange={this.handleInputChange} />
+                            English Lastname : <input type="text" name="en_lname" placeholder="Surname" value={this.state.en_lname} onChange={this.handleInputChange} />
                         </div>
                         <div>
-                            <input type="text" name="marriage" placeholder="สถานะการแต่งงาน" value={this.state.marriage} onChange={this.handleInputChange} />
-                            <input type="text" name="nation" placeholder="สัญชาติ" value={this.state.nation} onChange={this.handleInputChange} />
-                            <input type="text" name="religion" placeholder="ศาสนา" value={this.state.religion} onChange={this.handleInputChange} />
-                            <input type="date" name="birthday" value={this.state.birthday} onChange={this.handleInputChange} />
+                            Single / Marriage : <input type="text" name="marriage" placeholder="สถานะการแต่งงาน" value={this.state.marriage} onChange={this.handleInputChange} />
+                            Nation : <input type="text" name="nation" placeholder="สัญชาติ" value={this.state.nation} onChange={this.handleInputChange} />
+                            Religion : <input type="text" name="religion" placeholder="ศาสนา" value={this.state.religion} onChange={this.handleInputChange} />
+                            Birthday : <input type="date" name="birthday" placeholder="วัน/เดือน/ปีเกิด"value={this.state.birthday} onChange={this.handleInputChange} />
                         </div>
                         <div>
-                            <textarea type="text" name="desc" placeholder="ข้อมูลอื่นๆ" value={this.state.desc} onChange={this.handleInputChange} />
+                            Special Skills : <input type="text" name="skill" placeholder="ทักษะพิเศษ (ถ้ามี)" value={this.state.skill} onChange={this.handleInputChange} />
+                            Social (FB) : <input type="text" name="social_fb" placeholder="Link Facebook" value={this.state.social_fb} onChange={this.handleInputChange} />
+                        </div>
+                        <div>
+                            Etc : <textarea type="text" name="desc" placeholder="ข้อมูลอื่นๆ" value={this.state.desc} onChange={this.handleInputChange} />
                         </div>
                         <div>
                             <input type="submit" value="ยืนยัน" />

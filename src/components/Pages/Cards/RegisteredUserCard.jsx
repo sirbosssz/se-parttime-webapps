@@ -7,3 +7,4 @@ export default class RegisteredUserCard extends Component {
             </section>
         )
     }
+}

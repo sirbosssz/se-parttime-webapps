@@ -4,6 +4,8 @@ import firebase from './../firebase';
 import {
     NavLogo,
     NavUserMenu,
+    NavMenuTop,
+    NavMenuBottom,
 } from './NavBar/';
 
 export default class NavBar extends Component {

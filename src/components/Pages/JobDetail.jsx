@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import {
-    JobDetail,
+    JobDetailCard,
     OwnerCard,
-    RalatedJobsCard,
+    RelatedJobsCard,
 } from './Cards/';
 
 export default class JobDetail extends Component{

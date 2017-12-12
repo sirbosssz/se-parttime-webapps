@@ -7,3 +7,4 @@ export default class OwnerCard extends Component {
             </section>
         )
     }
+}

@@ -7,3 +7,4 @@ export default class JobTitleCard extends Component {
             </section>
         )
     }
+}
