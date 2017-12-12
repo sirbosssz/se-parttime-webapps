@@ -8,6 +8,7 @@ class JobCard extends Component {
         super();
         this.state = {
             registered: [],
+            error: '',
         }
     }
     register = () => {
@@ -27,7 +28,7 @@ class JobCard extends Component {
                 //update to db
                 let updates = {};
                 updates[this.props.job.post_key + '/registered_user'] = registered;
-                console.log(updates)
+                // console.log(updates)
                 database.ref('posts/').update(updates)
             }
         })
@@ -51,12 +52,17 @@ class JobCard extends Component {
                     }
                     newRegistered.push(user)
                     this.setState({
-                        registered: newRegistered
+                        registered: newRegistered,
+                        error: ''
                     })
                 })
             });
         });
-
+        if (this.state.registered.length === 0) {
+            this.setState({
+                error: 'ยังไม่มีผู้สมัครในตอนนี้'
+            })
+        }
     }
 
     render() {
@@ -72,6 +78,9 @@ class JobCard extends Component {
             let item = <li>ชื่อ:{items.first_name} {items.last_name}, email:{items.email}</li>
             registered.push(item)
         })
+        if (this.state.error) {
+            registered = <span>ยังไม่มีผู้สมัครในตอนนี้</span>
+        }
         return (
             <section id="jobcard">
                 <span>{this.props.job.title} </span>

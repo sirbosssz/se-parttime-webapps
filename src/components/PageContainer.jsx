@@ -11,6 +11,7 @@ import {
     HomeUser,
     RegisFill,
     JobCreate,
+    ProfileView,
 } from './Pages';
 
 class PageContainer extends Component {
@@ -47,6 +48,7 @@ class PageContainer extends Component {
                 <div>
                     {page}
                     <Route path="/create" component={JobCreate} />
+                    <Route path="/user=:id" component={ProfileView} />
                 </div>
             </Router>
         )

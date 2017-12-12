@@ -4,7 +4,12 @@
 .navbar {
   min-height: 50px;
   width: 100vw;
-  position: fixed; }
+  position: fixed;
+  z-index: 10000; }
+
+.navlogo {
+  width: 40px;
+  height: 40px; }
 
 .navbar.bg {
   background: #eeeeee;
@@ -19,6 +24,10 @@
   cursor: pointer;
   margin-top: .3em;
   font-size: 16pt; }
+
+.menu-item a {
+  color: #ffa13d;
+  text-decoration: none; }
 
 .menu-item.icon {
   color: #ffa13d; }
@@ -204,9 +213,14 @@ button {
   background: #ffa13d; }
 
 #searchsection-user {
-  padding-top: 50px;
+  padding-top: calc(50px + 1em);
   background: #fefefe;
   min-height: 200px; }
+
+#searchsection-user .comtainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 #joblistsection-user {
   padding: 1rem;
@@ -234,7 +248,8 @@ button {
 
 #jobcreate {
   min-height: 100vh;
-  padding: 1em; }
+  padding: 1em;
+  padding-top: calc(50px + 1em); }
 
 #jobcreate .btn {
   cursor: pointer; }
@@ -245,3 +260,22 @@ button {
   min-height: 100px;
   padding: 1em;
   margin-bottom: 1em; }
+
+#profile {
+  padding-top: 50px; }
+
+#profile .container {
+  padding-top: 2em; }
+
+#profile .box {
+  padding: .5em; }
+
+.box .innerbox {
+  border: 1px solid #333333;
+  padding: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em; }
+
+#profile span, #profile p {
+  font-size: 18pt; }

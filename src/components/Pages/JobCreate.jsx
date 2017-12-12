@@ -68,7 +68,7 @@ class JobCreate extends Component {
                         หัวข้อ <input type="text" name="title" value={this.state.title} onChange={this.handleInputChange} /> <br />
                         สถานที่ทำงาน <input type="text" name="location" value={this.state.location} onChange={this.handleInputChange} /> <br />
                         เวลาทำงาน <input type="text" name="time" value={this.state.time} onChange={this.handleInputChange} /> <br />
-                        สัญญาจ้าง <input type="number" name="duration" value={this.state.duration} onChange={this.handleInputChange} /> เดือน <br />
+                        สัญญาจ้าง <input type="number" name="duration" value={this.state.duration} onChange={this.handleInputChange} min="0" /> เดือน <br />
                         รายละเอียด <textarea name="desc" value={this.state.desc} onChange={this.handleInputChange} /> <br />
                         <div className="top-fixed">
                             <Link to={`/`}>
