@@ -28,7 +28,7 @@ class JobListSection extends Component {
                         <JobCard job={jobs} />
                     </div>
                 )
-                console.log(jobs)
+                // console.log(jobs)
                 card.push(newCard)
                 this.setState({
                     card: card

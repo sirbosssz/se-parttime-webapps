@@ -13,6 +13,11 @@ $popup-background: rgba(0,0,0,0.8);
     min-height: 50px;
     width: 100vw;
     position: fixed;
+    z-index: 10000;
+}
+.navlogo{
+    width: 40px;
+    height: 40px;
 }
 .navbar.bg{
     background: $white2;    
@@ -27,6 +32,10 @@ $popup-background: rgba(0,0,0,0.8);
     cursor: pointer;
     margin-top: .3em;
     font-size: 16pt;
+}
+.menu-item a {
+    color: $orange1;
+    text-decoration: none;
 }
 .menu-item.icon{
     color: $orange1;
@@ -177,15 +186,17 @@ footer{
     margin-bottom: .5em;
 }
 #detailssection-guest{
-    background: $white2;
-    min-height: 100px;
-}
-#examplejobsection-guest{
     background: $white1;
     min-height: 100px;
 }
-#moresection-guest{
+#examplejobsection-guest{
     background: $white2;
+    min-height: 100px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#moresection-guest{
+    background: $white1;
     min-height: 200px;
 }
 
@@ -222,9 +233,14 @@ button{
 
 // Home User
 #searchsection-user{
-    padding-top: 50px;
+    padding-top: calc(50px + 1em);
     background: $white1;
     min-height: 200px;
+}
+#searchsection-user .comtainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #joblistsection-user{
     padding: 1rem;
@@ -257,14 +273,61 @@ button{
 #jobcreate {
     min-height: 100vh;
     padding: 1em;
+    padding-top: calc(50px + 1em);
 }
 #jobcreate .btn{
     cursor: pointer;
 }
-#jobcard {
+.jobcard {
     background: $white1;
     width: 100%;
     min-height: 100px;
     padding: 1em;
+    padding-top: .8em;
+    padding-bottom: .5em;
     margin-bottom: 1em;
+    font-size: 16pt;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+.jobcard .title{
+    font-size: 22pt;
+    font-weight: bold;
+    line-height: 1em;
+    padding-left: 1em;
+}
+
+//profile
+#profile{
+    padding-top: 50px;
+}
+#profile .container{
+    padding-top: 2em;
+    padding-bottom: 3em;
+}
+#profile .box{
+    padding: .5em;
+}
+.box .innerbox{
+    border: 1px solid $black1;
+    padding: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+}
+#profile span, #profile p{
+    font-size: 18pt;
+}
+#profile .textinput{
+    width: 170px;
+}
+#profile .textarea{
+    width: 100%;
+}
+#profile h1{
+    display: inline;
+    margin-right: 1em;
+}
+#profile .btn{
+    font-size: 20pt;
+    cursor: pointer;
 }

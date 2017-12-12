@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { 
+import {
     HomeIcon,
     NotifyIcon,
     ProfileIcon,
     MenuDesktopIcon,
 } from './NavIcon/';
 
-export default class NavMenuTop extends Component {
+class NavMenuTop extends Component {
     render() {
         return (
             <div>
                 <ProfileIcon />
                 <HomeIcon />
-                <NotifyIcon />
+                {/* <NotifyIcon /> */}
                 <MenuDesktopIcon />
             </div>
         )
     }
 }
+
+export default (NavMenuTop)

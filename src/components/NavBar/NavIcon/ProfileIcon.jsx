@@ -15,7 +15,7 @@ class ProfileIcon extends Component {
             if (Object.keys(this.props.user).length !== 0) {
                 this.setState({
                     fullname: this.props.user.name_thai.first_name + " " + this.props.user.name_thai.last_name,
-                    image: <img src="profile.jpg" alt='profile.jpg' className="profile-picture"/>
+                    image: <img src="profile.jpg" alt='profile.jpg' className="profile-picture" />
                 })
             } else {
                 this.setState({
@@ -30,10 +30,13 @@ class ProfileIcon extends Component {
     }
 
     render() {
+        var userPage = 'user=' + this.props.user.username
         return (
             <span className="menu-item">
-                <span>{this.state.fullname}</span>
-                {this.state.image}
+                <a href={userPage}>
+                    <span>{this.state.fullname}</span>
+                    {this.state.image}
+                </a>
             </span>
 
         )

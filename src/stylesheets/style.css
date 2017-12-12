@@ -5,7 +5,12 @@
   z-index: 12;
   min-height: 50px;
   width: 100vw;
-  position: fixed;}
+  position: fixed;
+  z-index: 10000; }
+
+.navlogo {
+  width: 40px;
+  height: 40px; }
 
 .navbar.bg {
   background: #eeeeee;
@@ -24,6 +29,10 @@
   cursor: pointer;
   margin-top: .3em;
   font-size: 16pt; }
+
+.menu-item a {
+  color: #ffa13d;
+  text-decoration: none; }
 
 .menu-item.icon {
   color: #ffa13d; }
@@ -176,15 +185,17 @@ footer img{
   margin-bottom: .5em; }
 
 #detailssection-guest {
-  background: #eeeeee;
-  min-height: 100px; }
-
-#examplejobsection-guest {
   background: #fefefe;
   min-height: 100px; }
 
-#moresection-guest {
+#examplejobsection-guest {
   background: #eeeeee;
+  min-height: 100px;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+#moresection-guest {
+  background: #fefefe;
   min-height: 200px; }
 
 button {
@@ -216,9 +227,14 @@ button {
   background: #ffa13d; }
 
 #searchsection-user {
-  padding-top: 50px;
+  padding-top: calc(50px + 1em);
   background: #fefefe;
   min-height: 200px; }
+
+#searchsection-user .comtainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 #joblistsection-user {
   padding: 1rem;
@@ -246,29 +262,59 @@ button {
 
 #jobcreate {
   min-height: 100vh;
-  padding: 10em 4em;
-  background: url("https://github.com/bboomber/picture/blob/master/woodBG.jpg");
-  background-size: cover;}
+  padding: 1em;
+  padding-top: calc(50px + 1em); }
 
 #jobcreate .btn {
   cursor: pointer; }
 
-#jobcreate fieldset{
-  border: 2px solid #cecfd5;
-  border-radius: 6px;
-  padding: 24px 30px;
-  color: #03304f;
-  font-size: 20px;}
-
-#jobcreate textarea{
-  word-wrap: break-word;}
-
-#jobcreate legend, #jobcreate label{
-  font-weight: bold;}
-
-#jobcard {
+.jobcard {
   background: #fefefe;
   width: 100%;
   min-height: 100px;
   padding: 1em;
+  padding-top: .8em;
+  padding-bottom: .5em;
+  margin-bottom: 1em;
+  font-size: 16pt;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
+
+.jobcard .title {
+  font-size: 22pt;
+  font-weight: bold;
+  line-height: 1em;
+  padding-left: 1em; }
+
+#profile {
+  padding-top: 50px; }
+
+#profile .container {
+  padding-top: 2em;
+  padding-bottom: 3em; }
+
+#profile .box {
+  padding: .5em; }
+
+.box .innerbox {
+  border: 1px solid #333333;
+  padding: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
   margin-bottom: 1em; }
+
+#profile span, #profile p {
+  font-size: 18pt; }
+
+#profile .textinput {
+  width: 170px; }
+
+#profile .textarea {
+  width: 100%; }
+
+#profile h1 {
+  display: inline;
+  margin-right: 1em; }
+
+#profile .btn {
+  font-size: 20pt;
+  cursor: pointer; }

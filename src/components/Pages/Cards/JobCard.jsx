@@ -8,6 +8,7 @@ class JobCard extends Component {
         super();
         this.state = {
             registered: [],
+            error: '',
         }
     }
     register = () => {
@@ -27,11 +28,11 @@ class JobCard extends Component {
                 //update to db
                 let updates = {};
                 updates[this.props.job.post_key + '/registered_user'] = registered;
-                console.log(updates)
+                // console.log(updates)
                 database.ref('posts/').update(updates)
             }
         })
-
+        alert('สมัครสำเร็จ');
     }
 
     viewRegister = () => {
@@ -51,20 +52,27 @@ class JobCard extends Component {
                     }
                     newRegistered.push(user)
                     this.setState({
-                        registered: newRegistered
+                        registered: newRegistered,
+                        error: ''
                     })
                 })
             });
         });
-
+        if (this.state.registered.length === 0) {
+            this.setState({
+                error: 'ยังไม่มีผู้สมัครในตอนนี้'
+            })
+        }
     }
 
     render() {
         let button = null;
         if (this.props.user.username === this.props.job.owner) {
             button = (<button onClick={this.viewRegister}>ดูรายชื่อผู้สมัคร</button>)
-        } else {
+        } else if (Object.keys(this.props.user).length !== 0) {
             button = (<button onClick={this.register}>สมัคร</button>)
+        } else {
+            button = null;
         }
 
         var registered = [];
@@ -72,13 +80,23 @@ class JobCard extends Component {
             let item = <li>ชื่อ:{items.first_name} {items.last_name}, email:{items.email}</li>
             registered.push(item)
         })
+        if (this.state.error) {
+            registered = <span>ยังไม่มีผู้สมัครในตอนนี้</span>
+        }
+
+        let duration = ''
+        if (this.props.job.duration === '0'){
+            duration = 'ไม่มีกำหนดสัญญาจ้าง'
+        } else {
+            duration = this.props.job.duration + ' เดือน'
+        }
         return (
-            <section id="jobcard">
-                <span>{this.props.job.title} </span>
+            <section className="jobcard">
+                <span className="title">{this.props.job.title} </span>
                 <span>- {this.props.job.location}</span><br />
-                <span>เวลาทำงาน: {this.props.job.work_time}</span> <br />
-                <span>สัญญาจ้าง: {this.props.job.duration}</span> เดือน <br />
-                <span>รายละเอียด: <br />{this.props.job.desc}</span> <br />
+                <span><b>เวลาทำงาน:</b> {this.props.job.work_time}</span> <br />
+                <span><b>สัญญาจ้าง:</b> {duration}</span> <br />
+                <span><b>รายละเอียด:</b> <br />{this.props.job.desc}</span> <br />
                 {button}
                 <ul>
                     {registered}
