@@ -10,21 +10,22 @@ class MenuDesktopIcon extends Component {
     logout = () => {
         firebase.auth().signOut();
         this.props.removeUser();
-        if(this.props.page === 'Regis'){
+        if (this.props.page === 'Regis') {
             this.props.changePage('Home');
         }
     }
 
     render() {
         return (
-            <span className="menu-item">
+            <span className="menu-item icon">
                 <div className="dropdown" onClick={this.dropMenu}>
-                    <span>Menu </span>
+                    {/* <span>เมนู </span> */}
                     <i className="fas fa-chevron-circle-down"></i>
                 </div>
                 <div id="dropmenu" className="hide">
-                    <span>ตั้งค่า</span>
-                    <span onClick={this.logout}>ออกจากระบบ</span>
+                    <span>เมนู</span>
+                    <span className="link">ตั้งค่า</span>
+                    <span className="link" onClick={this.logout}>ออกจากระบบ</span>
                 </div>
             </span>
         )

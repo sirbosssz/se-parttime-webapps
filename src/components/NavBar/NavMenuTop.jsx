@@ -11,9 +11,9 @@ export default class NavMenuTop extends Component {
     render() {
         return (
             <div>
+                <ProfileIcon />
                 <HomeIcon />
                 <NotifyIcon />
-                <ProfileIcon />
                 <MenuDesktopIcon />
             </div>
         )
