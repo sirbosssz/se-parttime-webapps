@@ -24,12 +24,13 @@ class RegisterPopup extends Component {
         if (email.length !== 0 && password.length !== 0) {
             //check password
             if (password === repeatPass) {
-                if (password.length > 6 && password.length < 14) {
+                if (password.length >= 6 && password.length < 14) {
                     this.setState({ error: '' })
                     //password confirm
                     console.log('%c password correct', 'color:green');
                 } else {
                     this.setState({ error: 'รหัสผ่านควรมีความยาวระหว่าง 6 ถึง 14 ตัวอักษร' })
+                    console.log('รหัสผ่านควรมีความยาวระหว่าง 6 ถึง 14 ตัวอักษร');
                 }
                 // check email and username
                 database.ref('/users/').once('value', snapshot => {
@@ -40,7 +41,7 @@ class RegisterPopup extends Component {
                         }
                     })
                 })
-                if (this.state.error) {
+                if (!this.state.error) {
                     console.log('%c email, username correct', 'color:green');
                     // everything pass
 
