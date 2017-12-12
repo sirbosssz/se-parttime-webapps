@@ -63,22 +63,21 @@ class JobCreate extends Component {
             <section id="jobcreate">
                 {redirect}
                 <div className="container">
-                    <h1>ประกาศรับสมัครงานพาร์ทไทม์</h1>
                     <form onSubmit={this.handleSubmit} method="post">
                         <fieldset>
-                            <center><legend><h1>Registration Working</h1></legend></center>
-                                <label>หัวข้อ </label><br/> <input type="text" size="35" name="title" value={this.state.title} onChange={this.handleInputChange} /><br/>
-                                <label>สถานที่ทำงาน </label><br/><input type="text" size="35" name="location" value={this.state.location} onChange={this.handleInputChange} /><br/>
-                                <label>เวลาทำงาน </label><br/><input type="text" size="35" name="time" value={this.state.time} onChange={this.handleInputChange} /><br/>
-                                <label>สัญญาจ้าง </label><br/><input type="number" name="duration" value={this.state.duration} onChange={this.handleInputChange} /> <label>เดือน</label><br/>
-                                <label>รายละเอียด </label><br/>
-                            <textarea name="desc" rows="4" cols="40" value={this.state.desc} onChange={this.handleInputChange} />
+                            <center><legend><h1>ประกาศรับสมัครงานพาร์ทไทม์</h1></legend></center>
+                            <label>หัวข้อ </label><br /> <input className="jobcreate-input" type="text" size="35" name="title" value={this.state.title} onChange={this.handleInputChange} /><br />
+                            <label>สถานที่ทำงาน </label><br /><input className="jobcreate-input" type="text" size="35" name="location" value={this.state.location} onChange={this.handleInputChange} /><br />
+                            <label>เวลาทำงาน </label><br /><input className="jobcreate-input" type="text" size="35" name="time" value={this.state.time} onChange={this.handleInputChange} /><br />
+                            <label>สัญญาจ้าง </label><br /><input className="jobcreate-input-num" type="number" name="duration" value={this.state.duration} onChange={this.handleInputChange} /> <label>เดือน</label><br />
+                            <label>รายละเอียด </label><br />
+                            <textarea className="jobcreate-input" name="desc" rows="4" cols="40" value={this.state.desc} onChange={this.handleInputChange} />
                             <div className="top-fixed">
-                            <Link to={`/`}>
-                                <button className="btn">ยกเลิก</button>
-                            </Link>
-                            <input className="btn" type="submit" value="ยืนยัน" />
-                        </div>
+                                <Link to={`/`}>
+                                    <button className="btn">ยกเลิก</button>
+                                </Link>
+                                <input className="btn" type="submit" value="ยืนยัน" />
+                            </div>
                         </fieldset>
                     </form>
                 </div>
