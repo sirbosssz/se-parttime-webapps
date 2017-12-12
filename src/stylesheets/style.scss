@@ -186,15 +186,17 @@ footer{
     margin-bottom: .5em;
 }
 #detailssection-guest{
-    background: $white2;
-    min-height: 100px;
-}
-#examplejobsection-guest{
     background: $white1;
     min-height: 100px;
 }
-#moresection-guest{
+#examplejobsection-guest{
     background: $white2;
+    min-height: 100px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#moresection-guest{
+    background: $white1;
     min-height: 200px;
 }
 
@@ -276,12 +278,22 @@ button{
 #jobcreate .btn{
     cursor: pointer;
 }
-#jobcard {
+.jobcard {
     background: $white1;
     width: 100%;
     min-height: 100px;
     padding: 1em;
+    padding-top: .8em;
+    padding-bottom: .5em;
     margin-bottom: 1em;
+    font-size: 16pt;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+.jobcard .title{
+    font-size: 22pt;
+    font-weight: bold;
+    line-height: 1em;
+    padding-left: 1em;
 }
 
 //profile
@@ -290,6 +302,7 @@ button{
 }
 #profile .container{
     padding-top: 2em;
+    padding-bottom: 3em;
 }
 #profile .box{
     padding: .5em;
@@ -303,4 +316,18 @@ button{
 }
 #profile span, #profile p{
     font-size: 18pt;
+}
+#profile .textinput{
+    width: 170px;
+}
+#profile .textarea{
+    width: 100%;
+}
+#profile h1{
+    display: inline;
+    margin-right: 1em;
+}
+#profile .btn{
+    font-size: 20pt;
+    cursor: pointer;
 }
