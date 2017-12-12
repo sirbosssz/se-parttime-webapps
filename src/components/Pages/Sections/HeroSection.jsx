@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {popupChange} from '../../../redux.actions';
+import { popupChange } from '../../../redux.actions';
 
 class HeroSection extends Component {
 
@@ -16,12 +16,14 @@ class HeroSection extends Component {
 
     render() {
         return (
-            <section id="herosection-guest" className="fullscreen">
-                <div>
-                    <h1>HeroSection</h1>
+            <section id="herosection-guest" className="herofull">
+                <div className="herofull background"></div>
+                <div className="herocontainer">
+                    <h1>ชุมชนคนตังค์น้อย</h1>
+                    <h2>ค้นหางาน part time ที่เหมาะสมกับคุณ</h2>
                     <div className='button-area'>
-                        <button className="login-button" onClick={this.openLoginPopup} >Login</button>
-                        <button className="register-button" onClick={this.openRegisPopup} >Register</button>
+                        <button className="btn login-button" onClick={this.openLoginPopup} >เข้าสู่ระบบ</button>
+                        <button className="btn register-button" onClick={this.openRegisPopup} >สมัครสมาชิก</button>
                     </div>
                 </div>
             </section>

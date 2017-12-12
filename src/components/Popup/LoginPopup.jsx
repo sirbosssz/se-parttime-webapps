@@ -76,12 +76,12 @@ class LoginPopup extends Component {
         return (
             <div className="login-container">
                 <h1>
-                    Login
+                    ลงชื่อเข้าสู่ระบบ
                 </h1>
                 <form method='POST' onSubmit={this.handleSubmit}>
-                    <input className='textinput' type="text" name="username" placeholder="username or email" value={this.state.username} onChange={this.handleInputChange} />
-                    <input className='textinput' type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleInputChange} />
-                    <input className='buttoninput' type="submit" value="Login" />
+                    <input className='textinput' type="text" name="username" placeholder="ชื่อผู้ใช้ หรือ email" value={this.state.username} onChange={this.handleInputChange} />
+                    <input className='textinput' type="password" name="password" placeholder="รหัสผ่าน" value={this.state.password} onChange={this.handleInputChange} />
+                    <input className='buttoninput' type="submit" value="เข้าสู่ระบบ" />
                 </form>
             </div>
         )

@@ -1,40 +1,82 @@
 $white1: #fefefe;
 $white2: #eeeeee;
-$orange1: #e93700;
-$orange2: #ffa13d;
+$orange1: #ffa13d;
 $black1: #333333;
 $black2: #121212;
 $popup-background: rgba(0,0,0,0.8);
 
+* {
+    font-family: 'ThaiSansNeue';
+}
 // Navbar
 .navbar{
-    height: 50px;
+    min-height: 50px;
+    width: 100vw;
+    position: fixed;
+}
+.navbar.bg{
     background: $white2;    
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
 }
 .navbar .usermenu{
     float: right;
+    margin-right: 1em;
 }
 .navbar .usermenu .menu-item{
-    margin-left: 1em;
+    margin-left: 1.5em;
     cursor: pointer;
+    margin-top: .3em;
+    font-size: 16pt;
+}
+.menu-item.icon{
+    color: $orange1;
 }
 .menu-item .dropdown{
     display: inline;
 }
 #dropmenu{
-    background: $white2;
+    background: $white1;
+    font-size: 16pt;
+    line-height: 1em;
     position: absolute;
     // width: 100px;
-    right: .5em;
-    top: 50px;
+    right: 1em;
+    top: 45px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
 }
 #dropmenu span{
     display: block;
-    width: 100%;
-    padding: .5em;
+    font-size: 14pt;
+    color: $black1;
+    text-align: center;
+    background: $white2;
+    padding-bottom: .3em;
 }
-#dropmenu span:hover{
-    background: rgba(0,0,0,0.3);
+#dropmenu .link{
+    text-align: left;
+    color: $orange1;
+    font-size: 16pt;
+    display: block;
+    width: 100%;
+    padding: .3em;
+    padding-left: .5em;
+    padding-right: .5em;
+    background: $white1;
+    font-weight: 500;
+}
+#dropmenu .link:hover{
+    background: $orange1;
+    color: $white1;
+}
+.profile-picture{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: .5em;
+    margin-top: -.5em;
+}
+.icon{
+    font-size: 14pt;
 }
 // Footer
 footer{
@@ -60,7 +102,7 @@ footer{
 }
 .popup-inner{
     position: absolute;
-    background: $white1;
+    background: rgba(255,255,255,0.8);
     top: 50px;
 }
 .login-popup{
@@ -68,25 +110,71 @@ footer{
     min-height: 400px;
     left: calc(50vw - 150px);
 }
-.login-container, .register-container{
-    padding: 1em;
+.login-container .textinput{
+    width: 100%;
+    font-size: 16pt;
+    padding-left: .75em;
+    padding-right: .75em;
+    border: 0;
+    background: $white1;
 }
-.login-container input, .register-container div{
+.login-container h1{
+    text-align: center;
+    margin-bottom: .5em;
+}
+.login-container .buttoninput{
+    width: 100%;
+    font-size: 18pt;
+    background: $orange1;
+    border: 0;
+    color: $white1;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.login-container{
+    padding: 1.5em;
+}
+.login-container input{
     display: block;
-    margin-bottom: 1em;
-}
-.register-container input{
     margin-bottom: 1em;
 }
 // Page
 .fullscreen{
     min-height: 100vh;
 }
+.herofull{
+    height: 100vh;
+}
+.herofull.background{
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+}
 // Home Guest
 #herosection-guest{
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.herocontainer{
+    z-index: 11;
+    color: $white1;
+}
+.herocontainer h1, .herocontainer h2{
+    text-align: center;
+}
+.herocontainer h1{
+    font-size: 75pt;
+    line-height: 1em;
+}
+.herocontainer h2{
+    font-size: 50pt;
+    margin-bottom: .5em;
 }
 #detailssection-guest{
     background: $white2;
@@ -104,22 +192,37 @@ footer{
 // Buttons
 button{
     border: 0;
-    margin-left: .5em;
-    margin-right: .5em;
+    margin-left: .4em;
+    margin-right: .4em;
     cursor: pointer;
 }
 .button-area{
     text-align: center;
 }
+.button-area button{
+    font-size: 22pt;
+    line-height: .7em;
+    border-radius: 1em;
+    padding-left: .8em;
+    padding-right: .8em;
+    padding-bottom: .4em;
+    font-weight: 500;
+    
+}
 .login-button{
-    background: $orange1;
+    color: $white1;
+    border: 3px solid $orange1;
+    background: rgba(0,0,0,0.2);
 }
 .register-button{
-    background: $orange2;
+    color: $white1;
+    border: 3px solid $orange1;
+    background: $orange1;
 }
 
 // Home User
 #searchsection-user{
+    padding-top: 50px;
     background: $white1;
     min-height: 200px;
 }

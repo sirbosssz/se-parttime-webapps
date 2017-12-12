@@ -72,9 +72,9 @@ class RegisterPopup extends Component {
 
     render() {
         return (
-            <div className="register-container">
+            <div className="login-container">
                 <h1>
-                    Register
+                    สมัครสมาชิก
                 </h1>
                 <form method='POST' onSubmit={this.handleSubmit}>
                     <input className='textinput' type="email" name="email" placeholder="อีเมล์" value={this.state.email} onChange={this.handleInputChange} />
