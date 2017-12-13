@@ -6,7 +6,7 @@ export default class SearchSection extends Component {
         return(
             <section id="searchsection-user">
                 <div className="container">
-                    <h1>Search Bar</h1>
+                    <h1 id="searchtext">งานที่รับสมัครล่าสุด</h1>
                 </div>
                 {searchResult}
             </section>

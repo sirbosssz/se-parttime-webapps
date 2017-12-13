@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import firebase from './../../../firebase';
 
 const database = firebase.database();
@@ -77,7 +78,7 @@ class JobCard extends Component {
 
         var registered = [];
         this.state.registered.forEach(items => {
-            let item = <li>ชื่อ:{items.first_name} {items.last_name}, email:{items.email}</li>
+            let item = <li>ชื่อ: {items.first_name}  {items.last_name}, email: {items.email} <Link to={`/user=` + items.username}>ดูโปรไฟล์</Link> <Link to={`/post=` + this.props.job.post_key + `&user=` + items.username}>ยอมรับ</Link></li>
             registered.push(item)
         })
         if (this.state.error) {
@@ -85,7 +86,7 @@ class JobCard extends Component {
         }
 
         let duration = ''
-        if (this.props.job.duration === '0'){
+        if (this.props.job.duration === '0') {
             duration = 'ไม่มีกำหนดสัญญาจ้าง'
         } else {
             duration = this.props.job.duration + ' เดือน'
@@ -95,6 +96,7 @@ class JobCard extends Component {
                 <span className="title">{this.props.job.title} </span>
                 <span>- {this.props.job.location}</span><br />
                 <span><b>เวลาทำงาน:</b> {this.props.job.work_time}</span> <br />
+                <span><b>ผู้ประกาศ:</b> <Link to={`/user=` + this.props.job.owner}>{this.props.job.owner}</Link> </span> <br />
                 <span><b>สัญญาจ้าง:</b> {duration}</span> <br />
                 <span><b>รายละเอียด:</b> <br />{this.props.job.desc}</span> <br />
                 {button}

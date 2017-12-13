@@ -46,7 +46,7 @@ class JobListSection extends Component {
         return (
             <section id="joblistsection-user">
                 <div className="head">
-                    <span>งานที่รับสมัครล่าสุด</span>
+                    {/* <span>งานที่รับสมัครล่าสุด</span> */}
                     <Link to={`/create`}>
                         <button className="btn">ประกาศรับสมัครงานพาร์ทไทม์</button>
                     </Link>
